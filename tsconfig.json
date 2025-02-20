@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ESNext",
+        "lib": ["ES6"],
+        "moduleResolution": "node",
+        "outDir": "./scripts",
+        "rootDir": "./source",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmitOnError": true,
+        "allowImportingTsExtensions": false,
+    },
+    "include": [
+        "source/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/.*",
+        "**/.*/",
+        "notsc"
+    ]
+}

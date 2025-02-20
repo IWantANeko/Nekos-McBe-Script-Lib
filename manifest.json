@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§7Type Script Library",
+        "description": "§7§oMy Lib",
+        "uuid": "3d205c04-d2e0-4fa3-b217-6917cce2293c",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 20, 0]
+    },
+    "modules": [
+        {
+            "version": [1, 0, 0],
+            "uuid": "f217a699-41f9-4b11-b29d-69e3b99cd94a",
+            "type": "script",
+            "language": "javascript",
+            "entry": "scripts/Main.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.0.0-alpha"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "2.0.0-alpha"
+        }
+    ]
+}
