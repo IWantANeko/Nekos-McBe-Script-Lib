@@ -420,6 +420,7 @@ class Package extends PackageServiceHandler {
     }
 
     public respondDataObject(response: Response): void {
+        response;
         // system.sendScriptEvent(
         //     DataPacker.packId("response", sourcePackage, destinationPackage),
         //     DataPacker.packResponse(response)

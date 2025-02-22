@@ -1,4 +1,3 @@
-import * as cmd from '../Command/index';
 import { world } from "@minecraft/server";
 
 export type ModuleVersion = [number, number, number];
@@ -8,14 +7,10 @@ export abstract class Module {
     readonly abstract name: string;
     readonly abstract displayName: string;
     readonly abstract version: ModuleVersion;
-    private linkedCommands?: cmd.Command[];
     private enabled: boolean;
 
-    public constructor(initiallyEnabled: boolean = false, linkedCommands?: cmd.Command[]) {        
-        if (linkedCommands) cmd.CommandRegistry.register(linkedCommands, false);
-
+    public constructor(initiallyEnabled: boolean = false) {        
         this.enabled = false;
-        this.linkedCommands = linkedCommands;
         if (initiallyEnabled) this.enable();
     }
 
@@ -25,12 +20,6 @@ export abstract class Module {
 
     public enable(): void {
         if (!this.enabled) {
-            if (this.linkedCommands !== undefined) {
-                for (const command of this.linkedCommands) {
-                    command.setAccess(true);
-                }
-            }
-
             this.enabled = true;
             this.onEnable();
         }
@@ -38,12 +27,6 @@ export abstract class Module {
 
     public disable(): void {
         if (this.enabled) {
-            if (this.linkedCommands !== undefined) {
-                for (const command of this.linkedCommands) {
-                    command.setAccess(false);
-                }
-            }
-
             this.enabled = false;
             this.onDisable();
         }

@@ -1,4 +1,4 @@
-import { moduleManager } from "./Module";
+// import { moduleManager } from "./Module";
 
 // moduleManager.load(
 //     []
