@@ -19,10 +19,10 @@ export class LogDatabase {
         return rawLogString.split('\u241E').length - 1;
     }
 
-    public pushLogs(...logs: string[]): void {
+    public pushLog(log: string): void {
         const rawLogString = this.getLocalLogString();
         const existingLogs = rawLogString ? rawLogString.split('\u241E') : [];
-        existingLogs.push(...logs);
+        existingLogs.push(`${this.getTime()} ${log}`);
     
         if (existingLogs.length > this.maxLogs) {
             const excess = existingLogs.length - this.maxLogs;
@@ -57,5 +57,17 @@ export class LogDatabase {
 
     private getLocalLogString(): string {
         return getLocal(`LOG_DATABASE:${this.id}`) as string || "";
+    }
+
+    private getTime(): string {
+        const date = new Date();
+
+        return `[${
+            date.getHours().toString().padStart(2, "0")
+        }:${
+            date.getMinutes().toString().padStart(2, "0")
+        }:${
+            date.getSeconds().toString().padStart(2, "0")
+        }] `;
     }
 }
