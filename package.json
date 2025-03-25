@@ -1,0 +1,22 @@
+{
+  "name": "nekos-mcbe-script-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IWantANeko/Nekos-McBe-Script-Lib.git"
+  },
+  "author": "catgirlsbest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IWantANeko/Nekos-McBe-Script-Lib/issues"
+  },
+  "homepage": "https://github.com/IWantANeko/Nekos-McBe-Script-Lib#readme",
+  "dependencies": {
+    "@minecraft/server": "^2.0.0-beta.1.21.80-preview.21"
+  }
+}
